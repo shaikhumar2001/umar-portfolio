@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --heading: rgb(0, 10, 45);
+    --para: #777;
+    --para-tint: #e4e4e4;
+    --black: #212529;
+    --white: #fff;
+    --helper: #8490ff;
+    --helper-tint: #f3f4ff;
+    --bg: rgb(249, 249, 255);
+    --gradient: linear-gradient(
+        0deg,
+        rgb(132, 144, 255) 0%,
+        rgb(98, 189, 252) 100%
+    );
+    --gradientSupport: -webkit-linear-gradient(
+        0deg,
+        rgb(132, 144, 255) 0%,
+        rgb(98, 189, 252) 100%
+    );
+    --shadow: 0px 0px 20px 0px rgb(132, 144, 255 / 20%);
+}
+
+html {
+    font-size: 62.5%; /** 1rem = 10px */
+}
+
+/***** BACKGROUND STYLING *****/
+body {
+    position: relative;
+    z-index: -10;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-attachment: fixed; /* Parallax effect */
+    margin: 0;
+}
+
+/* Adjust the size of dots and background size for larger screens */
+@media (min-width: 1440px) {
+    body {
+        background: radial-gradient(
+            #e5e7eb 1.5px,
+            transparent 1.5px
+        ); /* Increase dot size */
+        background-size: 20px 20px; /* Increase grid spacing */
+        background-attachment: fixed; /* Ensure parallax effect remains */
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        background: radial-gradient(
+            #e5e7eb 2.32px,
+            transparent 2.32px
+        ); /* Further increase dot size */
+        background-size: 28px 28px; /* Increase grid spacing */
+        background-attachment: fixed; /* Ensure parallax effect remains */
+    }
+}
+
+@media (min-width: 2560px) {
+    body {
+        background: radial-gradient(
+            #e5e7eb 3.5px,
+            transparent 3.5px
+        ); /* Even larger dot size */
+        background-size: 32px 32px; /* Further increase grid spacing */
+        background-attachment: fixed; /* Ensure parallax effect remains */
+    }
+}
+
+/***** End BACKGROUND STYLING *****/
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    color: var(--heading);
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+p {
+    color: var(--para);
+    line-height: 1.5;
+    font-size: 1.7rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/***** HEADER *****/
+.header {
+    padding: 0 5rem;
+    height: 10rem;
+    /* background-color: var(--bg); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .logo {
+        font-size: 5rem;
+        font-weight: 700;
+    }
+
+    & .navbar .navbar-list {
+        display: flex;
+        gap: 4.8rem;
+
+        & .navbar-link {
+            &:is(:link, :visited) {
+                display: inline-block;
+                text-decoration: none;
+                font-family: "Poppins", sans-serif;
+                font-size: 2rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: var(--black);
+                transition: color 0.3s linear;
+                -webkit-transition: color 0.3s linear;
+                -moz-transition: color 0.3s linear;
+                -ms-transition: color 0.3s linear;
+                -o-transition: color 0.3s linear;
+            }
+
+            &:is(:hover, :active) {
+                color: var(--helper);
+            }
+        }
+    }
+}
+/***** End HEADER *****/
