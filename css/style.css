@@ -1,19 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/***** FONT IMPORTS *****/
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap&family=Playpen+Sans:wght@100..800&display=swap&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/saucer-bb");
+/***** End FONT IMPORTS *****/
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
 }
 
-:root {
+/* :root {
     --heading: rgb(0, 10, 45);
     --para: #777;
     --para-tint: #e4e4e4;
     --black: #212529;
     --white: #fff;
-    --helper: #8490ff;
+    --helper: #0661da;
     --helper-tint: #f3f4ff;
     --bg: rgb(249, 249, 255);
     --gradient: linear-gradient(
@@ -27,10 +34,49 @@
         rgb(98, 189, 252) 100%
     );
     --shadow: 0px 0px 20px 0px rgb(132, 144, 255 / 20%);
+} */
+/* :root {
+    --heading: #071330;
+    --para: #0c4160;
+    --para-tint: #c3ceda;
+    --black: #212529;
+    --white: #ffffff;
+    --helper: #738fa7;
+    --helper-tint: #c3ceda;
+    --bg: #f5f5f5;
+    --gradient: linear-gradient(
+        0deg,
+        rgb(132, 144, 255) 0%,
+        rgb(98, 189, 252) 100%
+    );
+    --gradientSupport: -webkit-linear-gradient(
+        0deg,
+        rgb(132, 144, 255) 0%,
+        rgb(98, 189, 252) 100%
+    );
+    --shadow: 0px 0px 20px 0px rgb(132, 144, 255 / 20%);
+} */
+
+:root {
+    --bg-color: #ffffff;
+    --bg-dot-color: #e5e7eb;
+    --bg-color-alt: #000e1a;
+    --primary-color: #14203d;
+    --secondary-color: #0c4160;
+    --supporting-color: #69a7ca;
+    --supporting-color-alt: #b1d4e0;
+    --text-color: #212529;
+    --black: black;
+    --white: #ffffff;
+    --github-color: #010409;
+    --linkedin-color: #0a66c2;
+    --facebook-color: #1877f2;
+    --instagram-colors: #ffd600, #ff7a00, #ff0169, #d300c5, #d300c5;
 }
 
 html {
     font-size: 62.5%; /** 1rem = 10px */
+    overflow-x: hidden;
 }
 
 /***** BACKGROUND STYLING *****/
@@ -39,9 +85,12 @@ body {
     z-index: -10;
     height: 100vh;
     width: 100vw;
-    background-color: white;
-    background: radial-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 16px 16px;
+    background-color: var(--bg-color);
+    background: radial-gradient(
+        var(--bg-dot-color) 1px,
+        transparent 1px
+    ); /* Dot properties*/
+    background-size: 16px 16px; /* Distance between the dots */
     background-attachment: fixed; /* Parallax effect */
     margin: 0;
 }
@@ -50,7 +99,7 @@ body {
 @media (min-width: 1440px) {
     body {
         background: radial-gradient(
-            #e5e7eb 1.5px,
+            var(--bg-dot-color) 1.5px,
             transparent 1.5px
         ); /* Increase dot size */
         background-size: 20px 20px; /* Increase grid spacing */
@@ -61,7 +110,7 @@ body {
 @media (min-width: 1920px) {
     body {
         background: radial-gradient(
-            #e5e7eb 2.32px,
+            var(--bg-dot-color) 2.32px,
             transparent 2.32px
         ); /* Further increase dot size */
         background-size: 28px 28px; /* Increase grid spacing */
@@ -72,7 +121,7 @@ body {
 @media (min-width: 2560px) {
     body {
         background: radial-gradient(
-            #e5e7eb 3.5px,
+            var(--bg-dot-color) 3.5px,
             transparent 3.5px
         ); /* Even larger dot size */
         background-size: 32px 32px; /* Further increase grid spacing */
@@ -90,7 +139,7 @@ h4 {
 }
 
 h1 {
-    color: var(--heading);
+    color: var(--primary-color);
     font-size: 6rem;
     font-weight: 600;
 }
@@ -101,7 +150,7 @@ h3 {
 }
 
 p {
-    color: var(--para);
+    color: var(--text-color);
     line-height: 1.5;
     font-size: 1.7rem;
 }
@@ -114,11 +163,147 @@ li {
     list-style: none;
 }
 
+/***** REUSABLE CODE *****/
+.section {
+    padding: 12rem 0;
+}
+
+.container {
+    max-width: 140rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    gap: 9rem;
+}
+
+.grid-two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.social-media {
+    display: grid;
+    max-width: fit-content;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0 3.5rem 0;
+
+    & a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        height: 6rem;
+        background-color: var(--bg-color);
+        color: var(--secondary-color);
+        font-size: 3rem;
+        border: 0.3rem solid var(--secondary-color);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+
+        &:nth-child(4) {
+            transition: box-shadow 0.3s ease, background-image 0.3s ease;
+            -webkit-transition: color 0.3s ease, box-shadow 0.3s ease,
+                background-image 0.3s ease;
+            -moz-transition: color 0.3s ease, box-shadow 0.3s ease,
+                background-image 0.3s ease;
+            -ms-transition: color 0.3s ease, box-shadow 0.3s ease,
+                background-image 0.3s ease;
+            -o-transition: color 0.3s ease, box-shadow 0.3s ease,
+                background-image 0.3s ease;
+        }
+
+        &:hover {
+            color: var(--bg-color);
+            box-shadow: 0 0 1rem var(--bg-color-alt);
+            border-color: transparent;
+        }
+
+        &:nth-child(1):hover {
+            background-color: var(--github-color);
+        }
+        &:nth-child(2):hover {
+            background-color: var(--linkedin-color);
+        }
+        &:nth-child(3):hover {
+            background-color: var(--facebook-color);
+        }
+        &:nth-child(4):hover {
+            background-image: linear-gradient(
+                to right bottom,
+                var(--instagram-colors)
+            );
+            border: none;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.6rem 2.4rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    text-align: center;
+    border: 0.3rem solid transparent;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+
+    &:is(:hover, :active) {
+        background-color: var(--supporting-color);
+    }
+}
+
+.btn-alt {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+
+    &:is(:hover, :active) {
+        background-color: var(--supporting-color);
+        color: var(--bg-color);
+        border-color: transparent;
+    }
+}
+
+.button-stack-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: max-content;
+}
+
+.primary-heading {
+}
+.heading-info {
+}
+/***** End REUSABLE CODE *****/
+
 /***** HEADER *****/
 .header {
-    padding: 0 5rem;
-    height: 10rem;
-    /* background-color: var(--bg); */
+    padding: 2rem 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,11 +321,11 @@ li {
             &:is(:link, :visited) {
                 display: inline-block;
                 text-decoration: none;
-                font-family: "Poppins", sans-serif;
-                font-size: 2rem;
-                font-weight: 600;
+                /* font-family: "Playpen Sans", "Poppins", sans-serif; */
+                font-size: 2.2rem;
+                font-weight: 700;
                 text-transform: uppercase;
-                color: var(--black);
+                color: var(--primary-color);
                 transition: color 0.3s linear;
                 -webkit-transition: color 0.3s linear;
                 -moz-transition: color 0.3s linear;
@@ -149,9 +334,61 @@ li {
             }
 
             &:is(:hover, :active) {
-                color: var(--helper);
+                color: var(--supporting-color);
             }
         }
     }
 }
 /***** End HEADER *****/
+
+/***** HERO *****/
+.section-hero {
+    & .section-hero-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & .hero-greeting {
+            font-family: "Shadows Into Light", "Playpen Sans", cursive;
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 5rem;
+            color: var(--secondary-color);
+            line-height: 1.5;
+        }
+
+        & .hero-name {
+            font-family: "Saucer BB", "Poppins", sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 8rem;
+            line-height: 0.8;
+            color: var(--primary-color);
+        }
+
+        & .hero-profession {
+            font-family: "Shadows Into Light", "Playpen Sans", cursive;
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 5rem;
+            color: var(--secondary-color);
+            line-height: 1.5;
+        }
+    }
+
+    & .section-hero-img {
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+
+        & .hero-img {
+            max-width: 80%;
+            border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
+            -webkit-border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
+            -moz-border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
+            -ms-border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
+            -o-border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
+        }
+    }
+}
+/***** End HERO *****/
