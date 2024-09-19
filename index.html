@@ -17,12 +17,17 @@
     <body>
         <!-- ========== Start HEADER ========== -->
         <header class="header container">
-            <h1 class="logo">Umar.</h1>
+            <h2 class="logo">umar.</h2>
             <nav class="navbar">
                 <ul class="navbar-list">
                     <li><a href="#" class="navbar-link home-link">Home</a></li>
                     <li>
-                        <a href="#" class="navbar-link about-link">About</a>
+                        <a href="#section-about" class="navbar-link about-link"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link skills-link">Skills</a>
                     </li>
                     <li>
                         <a href="#" class="navbar-link service-link"
@@ -48,9 +53,11 @@
                 <div class="container grid grid-two-column">
                     <div class="section-hero-data">
                         <!-- right side hero section -->
-                        <h4 class="hero-greeting">hello, its me</h4>
+                        <h3 class="hero-text">hello, its me</h3>
                         <h1 class="hero-name">shaikh mohammad umar farooq</h1>
-                        <h3 class="hero-profession">I am a, Web Developer</h3>
+                        <h3 class="hero-text hero-profession">
+                            I am a, Web Developer
+                        </h3>
                         <div class="social-media">
                             <a href="#"><i class="fa-brands fa-github"></i></a>
                             <a href="#"
@@ -73,7 +80,7 @@
                             >
                         </div>
                     </div>
-                    <div class="section-hero-img">
+                    <div class="section-hero-img img-container">
                         <!-- left side hero section -->
                         <img
                             src="images/hero.jpg"
@@ -85,5 +92,31 @@
             </section>
         </main>
         <!-- ========== End HERO ========== -->
+
+        <!-- ========== Start ABOUT ========== -->
+        <section class="section-about section" id="section-about">
+            <div class="container grid grid-two-column">
+                <div class="section-about-img img-container">
+                    <img
+                        src="images/umar-suit.png"
+                        alt="my about image"
+                        class="about-img"
+                    />
+                </div>
+                <div class="section-about-data">
+                    <h2 class="primary-heading">about <span>me</span></h2>
+                    <h4 class="heading-info">know my story</h4>
+                    <p class="about-info">
+                        I'm a self-taught <span>Web Developer</span> based in
+                        <span>India</span> with a Bachelor's degree in Computer
+                        Applications (BCA) who develops software web solutions
+                        to help organizations operate more effectively and
+                        efficiently.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== End ABOUT ========== -->
     </body>
 </html>

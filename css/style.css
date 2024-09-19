@@ -85,10 +85,9 @@ body {
     z-index: -10;
     height: 100vh;
     width: 100vw;
-    background-color: var(--bg-color);
     background: radial-gradient(
         var(--bg-dot-color) 1px,
-        transparent 1px
+        var(--bg-color) 1px
     ); /* Dot properties*/
     background-size: 16px 16px; /* Distance between the dots */
     background-attachment: fixed; /* Parallax effect */
@@ -100,7 +99,7 @@ body {
     body {
         background: radial-gradient(
             var(--bg-dot-color) 1.5px,
-            transparent 1.5px
+            var(--bg-color) 1.5px
         ); /* Increase dot size */
         background-size: 20px 20px; /* Increase grid spacing */
         background-attachment: fixed; /* Ensure parallax effect remains */
@@ -111,7 +110,7 @@ body {
     body {
         background: radial-gradient(
             var(--bg-dot-color) 2.32px,
-            transparent 2.32px
+            var(--bg-color) 2.32px
         ); /* Further increase dot size */
         background-size: 28px 28px; /* Increase grid spacing */
         background-attachment: fixed; /* Ensure parallax effect remains */
@@ -122,7 +121,7 @@ body {
     body {
         background: radial-gradient(
             var(--bg-dot-color) 3.5px,
-            transparent 3.5px
+            var(--bg-color) 3.5px
         ); /* Even larger dot size */
         background-size: 32px 32px; /* Further increase grid spacing */
         background-attachment: fixed; /* Ensure parallax effect remains */
@@ -138,21 +137,11 @@ h4 {
     font-family: "Poppins", sans-serif;
 }
 
-h1 {
-    color: var(--primary-color);
-    font-size: 6rem;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-}
-
 p {
     color: var(--text-color);
     line-height: 1.5;
-    font-size: 1.7rem;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 a {
@@ -165,6 +154,7 @@ li {
 
 /***** REUSABLE CODE *****/
 .section {
+    min-height: 100vh;
     padding: 12rem 0;
 }
 
@@ -187,7 +177,7 @@ li {
     max-width: fit-content;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    margin: 3rem 0 3.5rem 0;
+    margin: 3rem 0 4rem 0;
 
     & a {
         display: inline-flex;
@@ -294,9 +284,24 @@ li {
     max-width: max-content;
 }
 
+.img-container {
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
 .primary-heading {
+    font-size: 6rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--primary-color);
+    line-height: 1;
 }
 .heading-info {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--secondary-color);
 }
 /***** End REUSABLE CODE *****/
 
@@ -311,6 +316,8 @@ li {
     & .logo {
         font-size: 5rem;
         font-weight: 700;
+        color: var(--primary-color);
+        text-transform: capitalize;
     }
 
     & .navbar .navbar-list {
@@ -348,7 +355,7 @@ li {
         flex-direction: column;
         justify-content: center;
 
-        & .hero-greeting {
+        & .hero-text {
             font-family: "Shadows Into Light", "Playpen Sans", cursive;
             text-transform: capitalize;
             font-weight: 600;
@@ -356,6 +363,9 @@ li {
             color: var(--secondary-color);
             line-height: 1.5;
         }
+        /* & .hero-profession {
+            color: red;
+        } */
 
         & .hero-name {
             font-family: "Saucer BB", "Poppins", sans-serif;
@@ -365,22 +375,9 @@ li {
             line-height: 0.8;
             color: var(--primary-color);
         }
-
-        & .hero-profession {
-            font-family: "Shadows Into Light", "Playpen Sans", cursive;
-            text-transform: capitalize;
-            font-weight: 600;
-            font-size: 5rem;
-            color: var(--secondary-color);
-            line-height: 1.5;
-        }
     }
 
     & .section-hero-img {
-        display: grid;
-        place-items: center;
-        pointer-events: none;
-
         & .hero-img {
             max-width: 80%;
             border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
@@ -392,3 +389,36 @@ li {
     }
 }
 /***** End HERO *****/
+
+/***** ABOUT *****/
+.section-about {
+    & .section-about-img {
+        & .about-img {
+            max-width: 80%;
+            border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
+            -webkit-border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
+            -moz-border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
+            -ms-border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
+            -o-border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
+        }
+    }
+    & .section-about-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & .primary-heading span {
+            color: var(--secondary-color);
+        }
+
+        & .about-info {
+            margin: 1.5rem 0 3rem;
+
+            & span {
+                color: var(--secondary-color);
+                font-weight: 700;
+            }
+        }
+    }
+}
+/***** End ABOUT *****/
