@@ -62,10 +62,12 @@
     --bg-dot-color: #e5e7eb;
     --bg-color-alt: #000e1a;
     --primary-color: #0c4160;
-    --secondary-color: #14203d;
-    --supporting-color: #69a7ca;
-    --supporting-color-alt: #b1d4e0;
+    --secondary-color: #69a7ca;
+    --supporting-color: #b1d4e0;
+    --heading-color: #14203d;
+    --heading-color-alt: #f5f5f5;
     --text-color: #303030;
+    --text-color-alt: #dadada;
     --card-color: #f0f0f0;
     --card-color-alt: #f5f5f5;
     --black: black;
@@ -167,11 +169,21 @@ li {
 
 .grid {
     display: grid;
-    gap: 9rem;
 }
 
 .grid-two-column {
     grid-template-columns: repeat(2, 1fr);
+    gap: 9rem;
+}
+
+.grid-three-column {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-four-column {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
 .social-media {
@@ -188,11 +200,11 @@ li {
         width: 6rem;
         height: 6rem;
         background-color: var(--bg-color);
-        color: var(--secondary-color);
         font-size: 3rem;
-        border: 0.3rem solid var(--secondary-color);
         border-radius: 50%;
+        color: var(--heading-color);
         -webkit-border-radius: 50%;
+        border: 0.3rem solid var(--heading-color);
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
@@ -263,7 +275,7 @@ li {
     -o-transition: 0.3s ease;
 
     &:is(:hover, :active) {
-        background-color: var(--supporting-color);
+        background-color: var(--secondary-color);
     }
 }
 
@@ -273,7 +285,7 @@ li {
     border-color: var(--primary-color);
 
     &:is(:hover, :active) {
-        background-color: var(--supporting-color);
+        background-color: var(--secondary-color);
         color: var(--bg-color);
         border-color: transparent;
     }
@@ -299,9 +311,9 @@ li {
         font-size: 6rem;
         font-weight: 700;
         text-transform: capitalize;
-        color: var(--secondary-color);
         line-height: 1;
 
+        color: var(--heading-color);
         & span {
             color: var(--primary-color);
         }
@@ -324,15 +336,11 @@ li {
 }
 
 .skill-service-card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-
     & .skill-service-card {
         background-color: var(--card-color);
         padding: 6rem 4rem 8rem;
         text-align: center;
-        border: 0.3rem solid var(--supporting-color-alt);
+        border: 0.3rem solid var(--supporting-color);
         border-radius: 2rem;
         -webkit-border-radius: 2rem;
         -moz-border-radius: 2rem;
@@ -348,22 +356,33 @@ li {
             border-color: var(--primary-color);
             background-color: var(--card-color-alt);
             scale: 1.02;
+            translate: 0 -1rem;
         }
 
         & i {
             font-size: 7rem;
             color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        & img {
+            width: 7rem;
+            margin-bottom: 1.5rem;
         }
 
         & h3 {
             font-size: 3.5rem;
             text-transform: capitalize;
-            color: var(--secondary-color);
         }
 
+        color: var(--heading-color);
         & p {
             font-size: 2.5rem;
-            margin: 1rem 0 3rem;
+            margin: 1rem 0 0;
+        }
+
+        & a {
+            margin-top: 3rem;
         }
     }
 }
@@ -396,16 +415,16 @@ li {
                 font-size: 2.2rem;
                 font-weight: 700;
                 text-transform: uppercase;
-                color: var(--secondary-color);
                 transition: color 0.3s linear;
                 -webkit-transition: color 0.3s linear;
+                color: var(--heading-color);
                 -moz-transition: color 0.3s linear;
                 -ms-transition: color 0.3s linear;
                 -o-transition: color 0.3s linear;
             }
 
             &:is(:hover, :active) {
-                color: var(--supporting-color);
+                color: var(--secondary-color);
             }
         }
     }
@@ -424,9 +443,9 @@ li {
             text-transform: capitalize;
             font-weight: 600;
             font-size: 5rem;
-            color: var(--secondary-color);
             line-height: 1.5;
         }
+        color: var(--heading-color);
         /* & .hero-profession {
             color: red;
         } */
@@ -473,3 +492,105 @@ li {
     }
 }
 /***** End ABOUT *****/
+
+/***** PORTFOLIO *****/
+.section-portfolio .section-portfolio-container {
+    place-items: center;
+    gap: 2.5rem;
+
+    & .portfolio-box {
+        position: relative;
+        display: flex;
+        width: 65rem;
+        height: 35rem;
+        overflow: hidden;
+        border: 0.3rem solid var(--supporting-color);
+        box-shadow: 0 0 1rem var(--bg-color-alt);
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+        transition: 0.5s ease;
+        -webkit-transition: 0.5s ease;
+        -moz-transition: 0.5s ease;
+        -ms-transition: 0.5s ease;
+        -o-transition: 0.5s ease;
+
+        &:hover {
+            scale: 1.02;
+        }
+
+        & img {
+            width: 100%;
+            transition: 0.5s ease;
+            -webkit-transition: 0.5s ease;
+            -moz-transition: 0.5s ease;
+            -ms-transition: 0.5s ease;
+            -o-transition: 0.5s ease;
+        }
+
+        &:hover img {
+            scale: 1.1;
+        }
+
+        & .portfolio-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                var(--primary-color)
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 6rem;
+            translate: 0 100%;
+            transition: 0.5s ease;
+            -webkit-transition: 0.5s ease;
+            -moz-transition: 0.5s ease;
+            -ms-transition: 0.5s ease;
+            -o-transition: 0.5s ease;
+
+            & h4 {
+                font-size: 5rem;
+                color: var(--heading-color-alt);
+            }
+
+            & p {
+                font-size: 2.5rem;
+                margin: 0.3rem 0 1rem;
+                color: var(--text-color-alt);
+            }
+
+            & .button-stack-two a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 6rem;
+                height: 6rem;
+                background: var(--text-color);
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+
+                & i {
+                    font-size: 2.5rem;
+                    color: var(--bg-color);
+                }
+            }
+        }
+
+        &:hover .portfolio-layer {
+            translate: 0 0;
+        }
+    }
+}
+/***** End PORTFOLIO *****/
