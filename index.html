@@ -20,7 +20,9 @@
             <h2 class="logo">umar.</h2>
             <nav class="navbar">
                 <ul class="navbar-list">
-                    <li><a href="#" class="navbar-link home-link">Home</a></li>
+                    <li>
+                        <a href="#" class="navbar-link home-link">Home</a>
+                    </li>
                     <li>
                         <a href="#section-about" class="navbar-link about-link"
                             >About</a
@@ -48,16 +50,24 @@
                         >
                     </li>
                     <li>
-                        <a href="#" class="navbar-link contact-link">Contact</a>
+                        <a
+                            href="#section-contact"
+                            class="navbar-link contact-link"
+                            >Contact</a
+                        >
                     </li>
                 </ul>
             </nav>
+            <div class="mobile-nav-btn">
+                <i class="mobile-nav-icon fa-solid fa-bars"></i>
+                <i class="mobile-nav-icon fa-solid fa-xmark"></i>
+            </div>
         </header>
         <!-- ========== End HEADER ========== -->
 
         <!-- ========== Start HERO ========== -->
         <main>
-            <section class="section-hero section">
+            <section class="section-hero section" id="section-hero">
                 <div class="container grid grid-two-column">
                     <div class="section-hero-data">
                         <!-- right side hero section -->
@@ -89,7 +99,7 @@
                             ></a>
                         </div>
                         <div class="button-stack-two">
-                            <a href="#" class="btn">Hire Me</a>
+                            <a href="#section-contact" class="btn">Hire Me</a>
                             <a
                                 href="https://drive.google.com/file/d/17aroyoCprkYI4rZgmut1i53_NuJTeylS/view?usp=drive_link"
                                 target="_blank"
@@ -135,7 +145,7 @@
                         efficiently.
                     </p>
                     <div class="button-stack-two">
-                        <a href="#" class="btn">Hire Me</a>
+                        <a href="#section-contact" class="btn">Hire Me</a>
                         <a
                             href="https://drive.google.com/file/d/17aroyoCprkYI4rZgmut1i53_NuJTeylS/view?usp=drive_link"
                             target="_blank"
@@ -353,6 +363,99 @@
             </div>
         </section>
         <!-- ========== End PORTFOLIO ========== -->
+
+        <!-- ========== Start CONTACT ========== -->
+        <section class="section-contact section" id="section-contact">
+            <div class="container">
+                <div class="heading-with-info">
+                    <h2 class="primary-heading">contact <span>me</span></h2>
+                    <h4 class="heading-info">
+                        let's discuss about your next project
+                    </h4>
+                </div>
+                <div class="section-contact-container grid grid-two-column">
+                    <form action="#">
+                        <div class="input-box">
+                            <input
+                                type="text"
+                                placeholder="Full Name"
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                required
+                            />
+                        </div>
+                        <div class="input-box">
+                            <input
+                                type="text"
+                                placeholder="Phone Number"
+                                required
+                                maxlength="13"
+                                minlength="10"
+                            />
+                            <input type="text" placeholder="Subject" required />
+                        </div>
+                        <textarea
+                            cols="30"
+                            rows="10"
+                            placeholder="Your Message"
+                            required
+                        ></textarea>
+                        <!-- <input type="submit" value="Send Message" class="btn" /> -->
+                        <button type="submit" class="btn">
+                            Send Message&nbsp;&nbsp;<i
+                                class="fa-solid fa-paper-plane"
+                            ></i>
+                        </button>
+                    </form>
+                    <div class="contact-info">
+                        <div class="contact-info-box">
+                            <h4>
+                                Phone&nbsp;&nbsp;<i
+                                    class="fa-solid fa-phone"
+                                ></i>
+                            </h4>
+                            <p>+91 8277493459</p>
+                        </div>
+                        <div class="contact-info-box">
+                            <h4>
+                                Email&nbsp;&nbsp;<i
+                                    class="fa-solid fa-envelope"
+                                ></i>
+                            </h4>
+                            <p>shaikhumar06122001@gmail.com</p>
+                        </div>
+                        <div class="contact-info-box">
+                            <h4>
+                                Address&nbsp;&nbsp;<i
+                                    class="fa-solid fa-location-dot"
+                                ></i>
+                            </h4>
+                            <p>Dharwad, Karnataka, India - 580008</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ========== End CONTACT ========== -->
+
+        <!-- ========== Start FOOTER ========== -->
+        <footer class="section-footer">
+            <div class="section-footer-container container">
+                <div class="footer-text">
+                    <p>Copyright &copy; 2023 | All Rights Reserved</p>
+                    <p>
+                        Designed & Developed by
+                        <a href="https://www.linkedin.com/in/shaikhumar2001s"
+                            >Umar</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- ========== End FOOTER ========== -->
 
         <script src="index.js"></script>
     </body>

@@ -10,52 +10,8 @@
     text-decoration: none;
     border: none;
     outline: none;
-    scroll-behavior: smooth;
     font-family: "Poppins", sans-serif;
 }
-
-/* :root {
-    --heading: rgb(0, 10, 45);
-    --para: #777;
-    --para-tint: #e4e4e4;
-    --black: #212529;
-    --white: #fff;
-    --helper: #0661da;
-    --helper-tint: #f3f4ff;
-    --bg: rgb(249, 249, 255);
-    --gradient: linear-gradient(
-        0deg,
-        rgb(132, 144, 255) 0%,
-        rgb(98, 189, 252) 100%
-    );
-    --gradientSupport: -webkit-linear-gradient(
-        0deg,
-        rgb(132, 144, 255) 0%,
-        rgb(98, 189, 252) 100%
-    );
-    --shadow: 0px 0px 20px 0px rgb(132, 144, 255 / 20%);
-} */
-/* :root {
-    --heading: #071330;
-    --para: #0c4160;
-    --para-tint: #c3ceda;
-    --black: #212529;
-    --white: #ffffff;
-    --helper: #738fa7;
-    --helper-tint: #c3ceda;
-    --bg: #f5f5f5;
-    --gradient: linear-gradient(
-        0deg,
-        rgb(132, 144, 255) 0%,
-        rgb(98, 189, 252) 100%
-    );
-    --gradientSupport: -webkit-linear-gradient(
-        0deg,
-        rgb(132, 144, 255) 0%,
-        rgb(98, 189, 252) 100%
-    );
-    --shadow: 0px 0px 20px 0px rgb(132, 144, 255 / 20%);
-} */
 
 :root {
     --bg-color: #ffffff;
@@ -64,6 +20,7 @@
     --primary-color: #0c4160;
     --secondary-color: #69a7ca;
     --supporting-color: #b1d4e0;
+    --supporting-color-alt: #84c2d6;
     --heading-color: #14203d;
     --heading-color-alt: #f5f5f5;
     --text-color: #303030;
@@ -81,10 +38,17 @@
 html {
     font-size: 62.5%; /** 1rem = 10px */
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.no-scroll-touch {
+    overflow-y: hidden;
+    /* touch-action: none; */
 }
 
 /***** BACKGROUND STYLING *****/
 body {
+    overflow-x: hidden;
     position: relative;
     z-index: -10;
     height: 100vh;
@@ -252,7 +216,9 @@ li {
 }
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 1.6rem 2.4rem;
     background-color: var(--primary-color);
     color: var(--bg-color);
@@ -368,6 +334,8 @@ li {
         & img {
             width: 7rem;
             margin-bottom: 1.5rem;
+            pointer-events: none;
+            user-select: none;
         }
 
         & h3 {
@@ -415,9 +383,9 @@ li {
                 font-size: 2.2rem;
                 font-weight: 700;
                 text-transform: uppercase;
+                color: var(--heading-color);
                 transition: color 0.3s linear;
                 -webkit-transition: color 0.3s linear;
-                color: var(--heading-color);
                 -moz-transition: color 0.3s linear;
                 -ms-transition: color 0.3s linear;
                 -o-transition: color 0.3s linear;
@@ -426,6 +394,15 @@ li {
             &:is(:hover, :active) {
                 color: var(--secondary-color);
             }
+        }
+    }
+
+    & .mobile-nav-btn {
+        display: none;
+        cursor: pointer;
+
+        & .mobile-nav-icon.fa-xmark {
+            display: none;
         }
     }
 }
@@ -594,3 +571,237 @@ li {
     }
 }
 /***** End PORTFOLIO *****/
+
+/***** CONTACT *****/
+.section-contact .section-contact-container {
+    gap: 2rem;
+
+    & form {
+        max-width: 70rem;
+        margin: 0 0 3rem;
+        /* text-align: center; */
+
+        & .input-box {
+            display: flex;
+            justify-content: space-between;
+            /* flex-wrap: wrap; */
+            gap: 1rem;
+        }
+
+        & :is(.input-box input, textarea) {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 2rem;
+            color: var(--text-color);
+            background-color: var(--card-color);
+            margin: 0.7rem 0;
+            border: 0.3rem solid var(--supporting-color);
+            border-radius: 0.8rem;
+            -webkit-border-radius: 0.8rem;
+            -moz-border-radius: 0.8rem;
+            -ms-border-radius: 0.8rem;
+            -o-border-radius: 0.8rem;
+
+            &:focus {
+                background-color: var(--card-color-alt);
+                border-color: var(--supporting-color-alt);
+            }
+        }
+
+        & .input-box input {
+            width: 50%;
+        }
+
+        & textarea {
+            resize: none;
+        }
+
+        & button.btn {
+            margin-top: 2rem;
+            width: 100%;
+        }
+    }
+
+    & .contact-info {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        gap: 9.6rem;
+
+        & h4 {
+            font-size: 3.5rem;
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+
+            & i {
+                color: var(--primary-color);
+            }
+        }
+
+        & p {
+            font-size: 2.5rem;
+        }
+    }
+}
+/***** End CONTACT *****/
+
+/***** FOOTER *****/
+.section-footer {
+    padding: 3.5rem 0;
+    background-color: var(--primary-color);
+
+    & .section-footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    & .footer-text {
+        display: grid;
+        place-items: center;
+
+        & p {
+            font-size: 2.5rem;
+            color: var(--text-color-alt);
+
+            & a {
+                color: var(--supporting-color);
+                transition: all 0.3s ease;
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+
+                &:hover {
+                    color: var(--secondary-color);
+                }
+            }
+        }
+    }
+}
+/***** End FOOTER *****/
+
+/***** SCROLL TO TOP FLOATING BUTTON *****/
+.scrollTop-style {
+    position: fixed;
+    right: 2%;
+    bottom: 18%;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+
+    & i {
+        font-size: 2.7rem;
+        color: var(--white);
+        transition: 0.5s ease;
+        -webkit-transition: 0.5s ease;
+        -moz-transition: 0.5s ease;
+        -ms-transition: 0.5s ease;
+        -o-transition: 0.5s ease;
+    }
+
+    &:hover {
+        box-shadow: 0 0 1rem var(--text-color);
+
+        & i {
+            scale: 1.2;
+            translate: 0 -0.3rem;
+        }
+    }
+}
+
+.arrow-down-translate:hover i {
+    translate: 0 0.3rem;
+}
+
+/***** End SCROLL TO TOP FLOATING BUTTON *****/
+
+/***** RESPONSIVE DESIGN *****/
+@media (max-width: 980px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .header {
+        display: relative;
+        padding: 0 2rem;
+
+        & .mobile-nav-btn {
+            display: block;
+            color: var(--text-color);
+            z-index: 9999;
+
+            & .mobile-nav-icon {
+                font-size: 5rem;
+            }
+        }
+
+        & .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            translate: 100vw;
+            transition: all 0.5 ease;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            z-index: 9999;
+
+            & .navbar-list {
+                flex-direction: column;
+                align-items: center;
+
+                & .navbar-link:is(:link, :visited) {
+                    color: var(--text-color);
+                    font-size: 3.2rem;
+                }
+            }
+        }
+    }
+
+    /* ------active-class-start-------- */
+    .active {
+        & .navbar {
+            translate: 0 0;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        & .mobile-nav-btn {
+            & .mobile-nav-icon.fa-xmark {
+                display: block;
+            }
+
+            & .mobile-nav-icon.fa-bars {
+                display: none;
+            }
+        }
+    }
+    /* ------active-class-end-------- */
+}
+/***** End RESPONSIVE DESIGN *****/
