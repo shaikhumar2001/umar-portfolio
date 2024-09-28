@@ -50,7 +50,7 @@ html {
 body {
     overflow-x: hidden;
     position: relative;
-    z-index: -10;
+    z-index: -9999;
     height: 100vh;
     width: 100vw;
     background: radial-gradient(
@@ -60,40 +60,6 @@ body {
     background-size: 16px 16px; /* Distance between the dots */
     background-attachment: fixed; /* Parallax effect */
     margin: 0;
-}
-
-/* Adjust the size of dots and background size for larger screens */
-@media (min-width: 1440px) {
-    body {
-        background: radial-gradient(
-            var(--bg-dot-color) 1.5px,
-            var(--bg-color) 1.5px
-        ); /* Increase dot size */
-        background-size: 20px 20px; /* Increase grid spacing */
-        background-attachment: fixed; /* Ensure parallax effect remains */
-    }
-}
-
-@media (min-width: 1920px) {
-    body {
-        background: radial-gradient(
-            var(--bg-dot-color) 2.32px,
-            var(--bg-color) 2.32px
-        ); /* Further increase dot size */
-        background-size: 28px 28px; /* Increase grid spacing */
-        background-attachment: fixed; /* Ensure parallax effect remains */
-    }
-}
-
-@media (min-width: 2560px) {
-    body {
-        background: radial-gradient(
-            var(--bg-dot-color) 3.5px,
-            var(--bg-color) 3.5px
-        ); /* Even larger dot size */
-        background-size: 32px 32px; /* Further increase grid spacing */
-        background-attachment: fixed; /* Ensure parallax effect remains */
-    }
 }
 
 /***** End BACKGROUND STYLING *****/
@@ -138,6 +104,8 @@ li {
 .grid-two-column {
     grid-template-columns: repeat(2, 1fr);
     gap: 9rem;
+    /* grid-auto-flow: column;
+    place-items: center; */
 }
 
 .grid-three-column {
@@ -265,9 +233,13 @@ li {
 }
 
 .img-container {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
     pointer-events: none;
+
+    & :is(.hero-img, .about-img) {
+        max-width: 80%;
+    }
 }
 
 .heading-with-info {
@@ -303,6 +275,8 @@ li {
 
 .skill-service-card-container {
     & .skill-service-card {
+        display: grid;
+        place-items: center;
         background-color: var(--card-color);
         padding: 6rem 4rem 8rem;
         text-align: center;
@@ -354,6 +328,7 @@ li {
         }
     }
 }
+
 /***** End REUSABLE CODE *****/
 
 /***** HEADER *****/
@@ -423,9 +398,6 @@ li {
             line-height: 1.5;
         }
         color: var(--heading-color);
-        /* & .hero-profession {
-            color: red;
-        } */
 
         & .hero-name {
             font-family: "Saucer BB", "Poppins", sans-serif;
@@ -438,8 +410,9 @@ li {
     }
 
     & .section-hero-img {
+        justify-content: flex-end;
+
         & .hero-img {
-            max-width: 80%;
             border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
             -webkit-border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
             -moz-border-radius: 38% 62% 60% 40% / 44% 48% 52% 56%;
@@ -453,8 +426,9 @@ li {
 /***** ABOUT *****/
 .section-about {
     & .section-about-img {
+        justify-content: flex-start;
+
         & .about-img {
-            max-width: 80%;
             border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
             -webkit-border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
             -moz-border-radius: 54% 46% 39% 61% / 53% 48% 52% 47%;
@@ -473,12 +447,12 @@ li {
 /***** PORTFOLIO *****/
 .section-portfolio .section-portfolio-container {
     place-items: center;
-    gap: 2.5rem;
+    gap: 4rem;
 
     & .portfolio-box {
         position: relative;
         display: flex;
-        width: 65rem;
+        width: 55rem;
         height: 35rem;
         overflow: hidden;
         border: 0.3rem solid var(--supporting-color);
@@ -500,6 +474,7 @@ li {
 
         & img {
             width: 100%;
+            height: 100%;
             transition: 0.5s ease;
             -webkit-transition: 0.5s ease;
             -moz-transition: 0.5s ease;
@@ -574,8 +549,6 @@ li {
 
 /***** CONTACT *****/
 .section-contact .section-contact-container {
-    gap: 2rem;
-
     & form {
         max-width: 70rem;
         margin: 0 0 3rem;
@@ -724,21 +697,75 @@ li {
     }
 }
 
-.arrow-down-translate:hover i {
+/* .arrow-down-translate:hover i {
     translate: 0 0.3rem;
-}
+} */
 
 /***** End SCROLL TO TOP FLOATING BUTTON *****/
 
 /***** RESPONSIVE DESIGN *****/
-@media (max-width: 980px) {
+
+@media (max-width: 1500px) {
+    html {
+        font-size: 50%; /* 1rem = 8px */
+    }
+
     .container {
-        padding: 0 2rem;
+        max-width: 130rem;
+        padding: 0 3.2rem;
+    }
+
+    .img-container :is(.hero-img, .about-img) {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 1300px) {
+    html {
+        font-size: 43.75%;
+        /* 1rem = 7px */
+    }
+
+    .grid-four-column {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .img-container :is(.hero-img, .about-img) {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 110rem;
+    }
+
+    .grid-two-column {
+        gap: 4.8rem;
+    }
+
+    .grid-four-column {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .img-container :is(.hero-img, .about-img) {
+        max-width: 100%;
+    }
+
+    .section-portfolio .section-portfolio-container .portfolio-box {
+        width: 50rem;
+        height: 30rem;
+    }
+}
+
+@media (max-width: 980px) {
+    html {
+        font-size: 37.5%; /* 1rem = 6px */
     }
 
     .header {
         display: relative;
-        padding: 0 2rem;
 
         & .mobile-nav-btn {
             display: block;
@@ -783,7 +810,7 @@ li {
         }
     }
 
-    /* ------active-class-start-------- */
+    /*? ------active-class-start-------- */
     .active {
         & .navbar {
             translate: 0 0;
@@ -802,6 +829,10 @@ li {
             }
         }
     }
-    /* ------active-class-end-------- */
+    /*? ------active-class-end-------- */
+
+    .section-hero .section-hero-data .hero-name {
+        line-height: 0.7;
+    }
 }
 /***** End RESPONSIVE DESIGN *****/
