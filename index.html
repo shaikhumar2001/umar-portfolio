@@ -1,472 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Umar | Portfolio</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <!--* Font Awesome -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
-    <body>
-        <!--* ========== Start HEADER ========== -->
-        <header class="header">
-            <div class="container">
-                <h2 class="logo">umar.</h2>
-                <nav class="navbar">
-                    <ul class="navbar-list">
-                        <li>
-                            <a href="#" class="navbar-link home-link">Home</a>
-                        </li>
-                        <li>
-                            <a
-                                href="#section-about"
-                                class="navbar-link about-link"
-                                >About</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#section-skills"
-                                class="navbar-link skills-link"
-                                >Skills</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#section-services"
-                                class="navbar-link service-link"
-                                >Services</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#section-portfolio"
-                                class="navbar-link portfolio-link"
-                                >Portfolio</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#section-contact"
-                                class="navbar-link contact-link"
-                                >Contact</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
-                <div class="mobile-nav-btn">
-                    <i class="mobile-nav-icon fa-solid fa-bars"></i>
-                    <i class="mobile-nav-icon fa-solid fa-xmark"></i>
-                </div>
-            </div>
-        </header>
-        <!--* ========== End HEADER ========== -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umar Farooq | Freelance Full-Stack Software Engineer</title>
+<meta name="description" content="Freelance software engineer building web apps, APIs, real-time systems and SaaS products, from database to deployment. Available for new projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-        <!--* ========== Start HERO ========== -->
-        <main>
-            <section class="section-hero section" id="section-hero">
-                <div class="container grid grid-two-column">
-                    <div class="section-hero-data">
-                        <!-- right side hero section -->
-                        <h3 class="hero-text">hello, its me</h3>
-                        <h1 class="hero-name">shaikh mohammad umar farooq</h1>
-                        <h3 class="hero-text hero-profession">
-                            I am a, Web Developer
-                        </h3>
-                        <div class="social-media">
-                            <a
-                                href="https://github.com/shaikhumar2001"
-                                target="_blank"
-                                ><i class="fa-brands fa-github"></i
-                            ></a>
-                            <a
-                                href="https://www.linkedin.com/in/shaikhumar2001"
-                                target="_blank"
-                                ><i class="fa-brands fa-linkedin-in"></i
-                            ></a>
-                            <a
-                                href="https://www.facebook.com/shaikhumar2001"
-                                target="_blank"
-                                ><i class="fa-brands fa-facebook-f"></i
-                            ></a>
-                            <a
-                                href="https://www.instagram.com/shaikhumar2001"
-                                target="_blank"
-                                ><i class="fa-brands fa-instagram"></i
-                            ></a>
-                        </div>
-                        <div class="button-stack-two">
-                            <a href="#section-contact" class="btn">Hire Me</a>
-                            <a
-                                href="https://drive.google.com/file/d/1PU__JO5o1gpq_qRAnV4skr7WSIJ2xNOi/view?usp=sharing"
-                                target="_blank"
-                                class="btn btn-alt"
-                                >Download CV</a
-                            >
-                        </div>
-                    </div>
-                    <div class="section-hero-img img-container">
-                        <!-- left side hero section -->
-                        <img
-                            src="images/hero.jpg"
-                            alt="shaikh mohammad umar farooq @shaikhumar2001 image"
-                            class="hero-img"
-                        />
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!--* ========== End HERO ========== -->
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Umar Farooq</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+    <nav id="nav" class="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+      <a class="btn btn-sm" href="#contact">Hire me</a>
+    </nav>
+  </div>
+</header>
 
-        <!--* ========== Start ABOUT ========== -->
-        <section class="section-about section" id="section-about">
-            <div class="container grid grid-two-column">
-                <div class="section-about-img img-container">
-                    <img
-                        src="images/umar-suit.png"
-                        alt="shaikh mohammad umar farooq @shaikhumar2001 image"
-                        class="about-img"
-                    />
-                </div>
-                <div class="section-about-data">
-                    <div class="heading-with-info">
-                        <h2 class="primary-heading">about <span>me</span></h2>
-                        <h4 class="heading-info">know my story</h4>
-                    </div>
-                    <p class="para-text">
-                        I'm a self-taught
-                        <span>Freelance Web Developer</span> based in
-                        <span>India</span> with a Bachelor's degree in Computer
-                        Applications (BCA) who develops software web solutions
-                        to help organizations operate more effectively and
-                        efficiently.
-                    </p>
-                    <div class="button-stack-two">
-                        <a href="#section-contact" class="btn">Hire Me</a>
-                        <a
-                            href="https://drive.google.com/file/d/17aroyoCprkYI4rZgmut1i53_NuJTeylS/view?usp=drive_link"
-                            target="_blank"
-                            class="btn btn-alt"
-                            >Download CV</a
-                        >
-                    </div>
-                </div>
-            </div>
-        </section>
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="status"><i></i>Taking on new projects</p>
+      <h1>One engineer for the whole product, from database to deployment.</h1>
+      <p class="lead">I'm Umar, a complete software engineer who designs, builds and ships web apps, APIs and real-time systems for startups, schools and small businesses. You get one person accountable for every layer.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Start a project</a>
+        <a class="btn btn-ghost" href="#work">See my work</a>
+      </div>
+      <p class="meta">Based in Dharwad, India. Working with clients worldwide, remotely.</p>
+    </div>
+    <ol class="layers" aria-label="The layers I build">
+      <li><b>Front end</b><span>Next.js, React, Redux Toolkit</span></li>
+      <li><b>APIs</b><span>Django REST, Flask, Node/Express</span></li>
+      <li><b>Real time</b><span>WebSockets, ASGI, Redis</span></li>
+      <li><b>Data</b><span>PostgreSQL, MySQL, MongoDB</span></li>
+      <li><b>Infrastructure</b><span>Docker, Nginx, Linux VPS</span></li>
+    </ol>
+  </div>
+</section>
 
-        <!--* ========== End ABOUT ========== -->
+<section class="section" id="services">
+  <div class="wrap">
+    <h2>What I can build for you</h2>
+    <p class="sub">Hire me for a single piece or the whole product.</p>
+    <div class="grid g3">
+      <article class="card"><h3>Web applications</h3><p>Full-stack apps with Next.js or React on the front and Django on the back, built to be fast and easy to maintain.</p></article>
+      <article class="card"><h3>REST API development</h3><p>Clean, documented APIs with JWT authentication, validation and Swagger/OpenAPI docs that your front-end team can use right away.</p></article>
+      <article class="card"><h3>SaaS and multi-tenant platforms</h3><p>Role-based access, tenant separation and subscription-ready architecture for products that serve many organisations.</p></article>
+      <article class="card"><h3>Real-time features</h3><p>Live updates, notifications and chat using WebSockets, ASGI and Redis, running alongside your existing app.</p></article>
+      <article class="card"><h3>Database design and tuning</h3><p>Schemas, indexing and query optimisation on PostgreSQL, MySQL or MongoDB so your app stays quick as data grows.</p></article>
+      <article class="card"><h3>Deployment and server setup</h3><p>Dockerised releases on your own Ubuntu server with Nginx, Gunicorn and systemd, tuned for uptime.</p></article>
+    </div>
+  </div>
+</section>
 
-        <!--* ========== Start SKILLS ========== -->
-        <section class="section-skills section" id="section-skills">
-            <div class="container">
-                <div class="heading-with-info">
-                    <h2 class="primary-heading">my <span>skills</span></h2>
-                    <h4 class="heading-info">know my skillset</h4>
-                </div>
-                <div class="skill-service-card-container grid grid-four-column">
-                    <!-- Frontend skills start -->
-                    <div class="skill-service-card">
-                        <i class="fa-brands fa-html5"></i>
-                        <h3>HTML</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <i class="fa-brands fa-css3"></i>
-                        <h3>CSS</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <i class="fa-brands fa-js"></i>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img
-                            src="https://cdn.simpleicons.org/typescript/0c4160"
-                            class="typescript-icon"
-                        />
-                        <h3>TypeScript</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img
-                            src="https://cdn.simpleicons.org/tailwindcss/0c4160"
-                        />
-                        <h3>Tailwindcss</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <i class="fa-brands fa-react"></i>
-                        <h3>React</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/vite/0c4160" />
-                        <h3>Vite</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/redux/0c4160" />
-                        <h3>Redux Toolkit</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/postman/0c4160" />
-                        <h3>Postman</h3>
-                    </div>
-                    <!-- Frontend skills end -->
+<section class="section alt" id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="sub">Real systems, shipped and running.</p>
+    <div class="cases">
+      <article class="case">
+        <div class="case-head"><h3>Madrasa Space</h3><a href="https://madrasaspace.com" target="_blank" rel="noopener">madrasaspace.com</a></div>
+        <p>A multi-tenant learning management platform for Islamic educational institutes. One database serves many institutes, each with Admin, Instructor and Student roles.</p>
+        <ul class="tags"><li>Django</li><li>DRF</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>Next.js</li></ul>
+      </article>
+      <article class="case">
+        <div class="case-head"><h3>Enterprise management platform</h3><span>SAJRE Edutech</span></div>
+        <p>Backend architecture and REST APIs for a high-concurrency platform, with live WebSocket connections served by Daphne and Uvicorn. Production ran on private Linux servers and held 99.9% uptime.</p>
+        <ul class="tags"><li>Django</li><li>WebSockets</li><li>Redis</li><li>Nginx</li><li>Gunicorn</li><li>systemd</li></ul>
+      </article>
+      <article class="case">
+        <div class="case-head"><h3>Customer onboarding platform</h3><span>Open Source Community Center</span></div>
+        <p>Secure sign-in and access control for a production onboarding system, with server-side data fetching and strict form validation.</p>
+        <ul class="tags"><li>Next.js</li><li>JWT</li><li>Server Actions</li><li>Zod</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-                    <!-- Backend skills start -->
-                    <div class="skill-service-card">
-                        <i class="fa-brands fa-node-js"></i>
-                        <h3>Node</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/express/0c4160" />
-                        <h3>Express</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/mongodb/0c4160" />
-                        <h3>MongoDB</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img
-                            src="https://cdn.simpleicons.org/mongoose/0c4160"
-                        />
-                        <h3>Mongoose</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img
-                            src="https://cdn.simpleicons.org/postgresql/0c4160"
-                        />
-                        <h3>PostgreSQL</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/mysql/0c4160" />
-                        <h3>MySQL</h3>
-                    </div>
-                    <div class="skill-service-card">
-                        <img src="https://cdn.simpleicons.org/typeorm/0c4160" />
-                        <h3>TypeORM</h3>
-                    </div>
-                    <!-- Backend skills end -->
-                </div>
-            </div>
-        </section>
-        <!--* ========== End SKILLS ========== -->
+<section class="section" id="process">
+  <div class="wrap">
+    <h2>How we'll work together</h2>
+    <ol class="steps">
+      <li><h3>Discovery call</h3><p>We talk through your goals, users and budget. You get a clear scope and estimate.</p></li>
+      <li><h3>Plan and design</h3><p>I map out the data model, API and architecture before writing code, so nothing surprises you later.</p></li>
+      <li><h3>Build in iterations</h3><p>You see working progress regularly, with tests alongside the code.</p></li>
+      <li><h3>Launch and support</h3><p>I deploy to production, hand over documentation and stay available after go-live.</p></li>
+    </ol>
+  </div>
+</section>
 
-        <!--* ========== Start SERVICES ========== -->
-        <section class="section-services section" id="section-services">
-            <div class="container">
-                <div class="heading-with-info">
-                    <h2 class="primary-heading">My <span>Services</span></h2>
-                    <h4 class="heading-info">see what i offer</h4>
-                </div>
-                <div
-                    class="skill-service-card-container grid grid-three-column"
-                >
-                    <div class="skill-service-card">
-                        <i class="fa-solid fa-code"></i>
-                        <h3>web development</h3>
-                        <p>
-                            Building user-friendly websites that connect and
-                            inform everyone
-                        </p>
-                        <a
-                            href="https://dev.to/codewithshahan/the-world-of-web-development-a-comprehensive-overview-4i45"
-                            target="_blank"
-                            class="btn"
-                            >read more</a
-                        >
-                    </div>
-                    <div class="skill-service-card">
-                        <i class="fa-brands fa-dev"></i>
-                        <h3>full-stack dev</h3>
-                        <p>
-                            Creating complete web applications from design to
-                            database
-                        </p>
-                        <a
-                            href="https://dev.to/imparth/the-full-stack-developer-a-comprehensive-guide-2731"
-                            target="_blank"
-                            class="btn"
-                            >read more</a
-                        >
-                    </div>
-                    <div class="skill-service-card">
-                        <i class="fa-solid fa-computer"></i>
-                        <h3>CMS</h3>
-                        <p>
-                            Software for easily managing your business data
-                            without technical skills
-                        </p>
-                        <a
-                            href="https://en.wikipedia.org/wiki/Content_management_system"
-                            target="_blank"
-                            class="btn"
-                            >read more</a
-                        >
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--* ========== End SERVICES ========== -->
+<section class="section alt" id="stack">
+  <div class="wrap">
+    <h2>Tools I work with</h2>
+    <div class="grid g3 stack">
+      <div><h3>Back end</h3><ul class="tags"><li>Python</li><li>Django</li><li>Django REST Framework</li><li>Flask</li><li>Node.js</li><li>Express</li></ul></div>
+      <div><h3>Front end</h3><ul class="tags"><li>Next.js</li><li>React</li><li>Redux Toolkit</li><li>JavaScript</li><li>HTML and CSS</li></ul></div>
+      <div><h3>Data</h3><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Redis</li></ul></div>
+      <div><h3>Real time and security</h3><ul class="tags"><li>WebSockets</li><li>ASGI</li><li>JWT</li><li>Swagger/OpenAPI</li></ul></div>
+      <div><h3>DevOps</h3><ul class="tags"><li>Docker</li><li>Nginx</li><li>Gunicorn</li><li>Ubuntu VPS</li><li>systemd</li><li>Git and GitHub</li></ul></div>
+      <div><h3>Testing</h3><ul class="tags"><li>pytest</li><li>Jest</li></ul></div>
+    </div>
+  </div>
+</section>
 
-        <!--* ========== Start PORTFOLIO ========== -->
-        <section class="section-portfolio section" id="section-portfolio">
-            <div class="container">
-                <div class="heading-with-info">
-                    <h2 class="primary-heading">My <span>Projects</span></h2>
-                    <h4 class="heading-info">know my capability</h4>
-                </div>
+<section class="section" id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p>I'm Shaikh Mohammad Umar Farooq, a software engineer from Dharwad, Karnataka. I started in web development in 2024 and have since built and run production backends, designed authentication systems and managed my own Linux servers.</p>
+      <p>I also build my own SaaS products, so I think about your product the way an owner would: maintainable code, sensible costs and no surprises. I hold a BCA and four Meta front-end certificates.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Location</dt><dd>Dharwad, India (remote)</dd></div>
+      <div><dt>Production uptime</dt><dd>99.9%</dd></div>
+      <div><dt>Works best with</dt><dd>Startups, schools, small businesses</dd></div>
+      <div><dt>Engagement</dt><dd>Fixed-price projects or hourly</dd></div>
+    </dl>
+  </div>
+</section>
 
-                <div class="section-portfolio-container grid grid-two-column">
-                    <div class="portfolio-box">
-                        <img src="images/proshop.jpg" alt="proshop" />
-                        <div class="portfolio-layer">
-                            <h4>ProShop</h4>
-                            <p>
-                                Minimalistic E-commerce Web App developed using
-                                the MERN stack
-                            </p>
-                            <div class="button-stack-two">
-                                <a
-                                    href="https://github.com/shaikhumar2001/proshop"
-                                    target="_blank"
-                                    ><i class="fa-brands fa-github"></i
-                                ></a>
-                                <a
-                                    href="https://proshop-omega.vercel.app/"
-                                    target="_blank"
-                                    ><i
-                                        class="fa-solid fa-arrow-up-right-from-square"
-                                    ></i
-                                ></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-box">
-                        <img
-                            src="images/eventlitez-screeenshot.jpg"
-                            alt="eventlitez"
-                        />
-                        <div class="portfolio-layer">
-                            <h4>EventLitez</h4>
-                            <p>
-                                event listing website built developed HTML, CSS
-                                & JavaScript
-                            </p>
-                            <div class="button-stack-two">
-                                <a href="#"
-                                    ><i class="fa-brands fa-github"></i
-                                ></a>
-                                <a href="#"
-                                    ><i
-                                        class="fa-solid fa-arrow-up-right-from-square"
-                                    ></i
-                                ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--* ========== End PORTFOLIO ========== -->
+<section class="section contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Tell me about your project</h2>
+      <p>Send a few lines on what you need. I reply within one business day.</p>
+      <ul class="links">
+        <li><a href="mailto:shaikhumar06122001@gmail.com">shaikhumar06122001@gmail.com</a></li>
+        <li><a href="https://wa.me/918277493459" target="_blank" rel="noopener">WhatsApp: +91 82774 93459</a></li>
+        <li><a href="https://linkedin.com/in/shaikhumar2001" target="_blank" rel="noopener">linkedin.com/in/shaikhumar2001</a></li>
+      </ul>
+    </div>
+    <form id="form" class="form" novalidate>
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>What do you need?<select name="type"><option>Web application</option><option>API development</option><option>SaaS platform</option><option>Real-time features</option><option>Server setup and deployment</option><option>Something else</option></select></label>
+      <label>Project details<textarea name="msg" rows="5" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
 
-        <!--* ========== Start CONTACT ========== -->
-        <section class="section-contact section" id="section-contact">
-            <div class="container">
-                <div class="heading-with-info">
-                    <h2 class="primary-heading">contact <span>me</span></h2>
-                    <h4 class="heading-info">
-                        let's discuss about your next project
-                    </h4>
-                </div>
-                <div class="section-contact-container grid grid-two-column">
-                    <form action="#">
-                        <div class="input-box">
-                            <input
-                                type="text"
-                                placeholder="Full Name"
-                                required
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email Address"
-                                required
-                            />
-                        </div>
-                        <div class="input-box">
-                            <input
-                                type="text"
-                                placeholder="Phone Number"
-                                required
-                                maxlength="13"
-                                minlength="10"
-                            />
-                            <input type="text" placeholder="Subject" required />
-                        </div>
-                        <textarea
-                            cols="30"
-                            rows="10"
-                            placeholder="Your Message"
-                            required
-                        ></textarea>
-                        <!-- <input type="submit" value="Send Message" class="btn" /> -->
-                        <button type="submit" class="btn">
-                            Send Message&nbsp;&nbsp;<i
-                                class="fa-solid fa-paper-plane"
-                            ></i>
-                        </button>
-                    </form>
-                    <div class="contact-info">
-                        <div class="contact-info-box">
-                            <h4>
-                                Phone&nbsp;&nbsp;<i
-                                    class="fa-solid fa-phone"
-                                ></i>
-                            </h4>
-                            <p>+91 8277493459</p>
-                        </div>
-                        <div class="contact-info-box">
-                            <h4>
-                                Email&nbsp;&nbsp;<i
-                                    class="fa-solid fa-envelope"
-                                ></i>
-                            </h4>
-                            <p>shaikhumar06122001@gmail.com</p>
-                        </div>
-                        <div class="contact-info-box">
-                            <h4>
-                                Address&nbsp;&nbsp;<i
-                                    class="fa-solid fa-location-dot"
-                                ></i>
-                            </h4>
-                            <p>Dharwad, Karnataka, India - 580008</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--* ========== End CONTACT ========== -->
-
-        <!--* ========== Start FOOTER ========== -->
-        <footer class="section-footer">
-            <div class="section-footer-container container">
-                <div class="footer-text">
-                    <p>Copyright &copy; 2023 | All Rights Reserved</p>
-                    <p>
-                        Designed & Developed by
-                        <a
-                            href="https://www.linkedin.com/in/shaikhumar2001"
-                            target="_blank"
-                            >Umar</a
-                        >
-                    </p>
-                </div>
-            </div>
-        </footer>
-        <!--* ========== End FOOTER ========== -->
-
-        <script src="index.js"></script>
-    </body>
+<footer class="footer">
+  <div class="wrap"><span>&copy; <span id="year">2026</span> Umar Farooq</span><a href="#top">Back to top</a></div>
+</footer>
+<script src="script.js"></script>
+</body>
 </html>
