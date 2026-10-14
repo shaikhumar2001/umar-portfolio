@@ -1,59 +1,67 @@
-//* SCROLL TO TOP BUTTON start
-const headerSection = document.querySelector(".header");
-const heroSection = document.querySelector(".section-hero");
-const aboutSection = document.querySelector(".section-about");
-const footerElement = document.querySelector(".section-footer");
+(function () {
+  'use strict';
 
-const scrollElement = document.createElement("div");
-scrollElement.classList.add("scrollTop-style", "arrow-down-translate");
-scrollElement.innerHTML = `<a href="#"><i class="fa-solid fa-arrow-up" id="scrollFloatingButton"></i><a/>`;
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-footerElement.after(scrollElement);
-//* SCROLL TO TOP BUTTON end
+  // Mobile menu
+  var btn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('nav');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+  btn.addEventListener('click', function () {
+    setMenu(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 760) setMenu(false);
+  });
 
-//* ACTIVE CLASS RESPONSIVE NAV start
-const menuButton = document.querySelector(".mobile-nav-btn");
-const navListButtons = document.querySelectorAll(
-    ".header .navbar .navbar-list li"
-);
-
-const toggleMenuButton = () => {
-    headerSection.classList.toggle("active");
-    document.documentElement.classList.toggle("no-scroll-touch");
-    document.body.classList.toggle("no-scroll-touch");
-};
-
-menuButton.addEventListener("click", toggleMenuButton);
-
-navListButtons.forEach((navListButton) => {
-    navListButton.addEventListener("click", (e) => {
-        headerSection.classList.remove("active");
-        document.documentElement.classList.remove("no-scroll-touch");
-        document.body.classList.remove("no-scroll-touch");
-
-        // const clickedElementName = e.target.name;
-        // const clickedElement = document.getElementById(clickedElementName);
-        // clickedElement.scrollIntoView({ behavior: "smooth" });
-
-        // console.log(clickedElement);
+  // Highlight the nav link of the section in view
+  var links = nav.querySelectorAll('a[href^="#"]:not(.btn)');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    links.forEach(function (a) {
+      var s = document.querySelector(a.getAttribute('href'));
+      if (s) io.observe(s);
     });
-});
+  }
 
-//* ACTIVE CLASS RESPONSIVE NAV end
-
-//* STICK NAVBAR start
-window.onscroll = () => {
-    const header = document.querySelector(".header");
-
-    header.classList.toggle("sticky", window.scrollY > 50);
-};
-
-// window.addEventListener("scroll", () => {
-//     const header = document.querySelector(".header");
-//     if (window.scrollY > 50) {
-//         header.classList.add("sticky");
-//     } else {
-//         header.classList.remove("sticky");
-//     }
-// });
-//* STICK NAVBAR end
+  // Contact form: validates, then opens the visitor's email app with the message filled in
+  var form = document.getElementById('form');
+  var note = form.querySelector('.note');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(form);
+    var ok = true;
+    ['name', 'email', 'msg'].forEach(function (k) {
+      var el = form.elements[k];
+      var bad = !el.value.trim() || (k === 'email' && !el.checkValidity());
+      el.classList.toggle('invalid', bad);
+      if (bad) ok = false;
+    });
+    if (!ok) {
+      note.textContent = 'Please fill in your name, a valid email and the project details.';
+      return;
+    }
+    var subject = 'Project enquiry: ' + d.get('type');
+    var body = d.get('msg') + '\n\nFrom: ' + d.get('name') + ' (' + d.get('email') + ')';
+    window.location.href = 'mailto:shaikhumar06122001@gmail.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    note.textContent = 'Opening your email app. If nothing opens, email me directly at the address on the left.';
+  });
+})();
